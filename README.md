@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Projeto Classificados
 
-## Getting Started
 
-First, run the development server:
+## Estrutura do Projeto
+
+
+## Pré-requisitos
+
+Se você ainda não tiver o Docker instalado, execute os seguintes comandos:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+sudo apt update
+sudo apt install docker.io docker-compose
+sudo docker --version
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Como Iniciar o Projeto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Passo 1: Clonar o repositório
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+git clone https://github.com/lopesmauro/classificados.git
+cd classificados
+npm i 
+```
 
-## Learn More
+### Passo 2: Definir Variáveis de Ambiente
 
-To learn more about Next.js, take a look at the following resources:
+Crie um arquivo `.env` na raiz do projeto para definir as variáveis de ambiente, como o usuário e a senha do banco de dados. Exemplo:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+POSTGRES_USER=myuser
+POSTGRES_PASSWORD=mypassword
+POSTGRES_DB=mydatabase
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Psso 3: Criar o arquivo `docker-compose.yml`
 
-## Deploy on Vercel
+Aqui está o conteúdo do arquivo docker-compose.yml:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```yaml
+version: '3.8'
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+services:
+  database:
+    image: postgres:13
+    container_name: my_postgres_container
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-mydb}
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata: {}
+```
+
+### Passo 4: Iniciar os Contêineres com Docker Compose
+
+```bash
+docker-compose up -d
+```
+
+### Passo 5: Acessar o Banco de Dados (Opcional)
+
+```bash
+psql -h localhost -p 5433 -U myuser -d mydatabase
+```
+
+Ou caso queira acessar pelo terminal do conteiner:
+
+```bash
+docker exec -it my_postgres_container bash
+psql -h localhost -p 5432 -U myuser -d mydatabase
+```
+
+
