@@ -1,6 +1,7 @@
 "use server"
 
 import { createCarSchema } from "@/schemas/createCar"
+import { fitImage } from "@/utils/fit-image"
 import { redirect } from "next/navigation"
 
 export const createCar = async (formData: FormData) => {
@@ -16,6 +17,7 @@ export const createCar = async (formData: FormData) => {
 
     if(data.success) {
       console.log(data.data)
+      const imgName = await fitImage(data.data.img)
     } else {
       console.log(data.error.flatten().fieldErrors)
     }
