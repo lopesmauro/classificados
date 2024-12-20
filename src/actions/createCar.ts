@@ -1,6 +1,7 @@
 "use server"
 
 import { createCarSchema } from "@/schemas/createCar"
+import { redirect } from "next/navigation"
 
 export const createCar = async (formData: FormData) => {
     const data = createCarSchema.safeParse({
@@ -16,4 +17,6 @@ export const createCar = async (formData: FormData) => {
     if(data.success) {
 
     }
+
+    redirect('/')
 }

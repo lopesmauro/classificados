@@ -5,12 +5,24 @@
 ```bash
 /classificados
 │
-├── /src/
-│   ├──
-│   └──1
-│
-├── /node_modules/
-└── tsconfig.json
+├── README.md           # Documentação do projeto
+├── docker-compose.yml  # Configuração do Docker Compose
+├── next.config.ts      # Configuração do Next.js
+├── next-env.d.ts       # Tipagem automática do Next.js
+├── node_modules/       # Dependências instaladas (gerenciado pelo npm)
+├── package.json        # Dependências e scripts do projeto
+├── package-lock.json   # Detalhes de versões exatas das dependências
+├── postcss.config.mjs  # Configuração do PostCSS
+├── prisma/             # Configuração e esquemas do Prisma
+├── public/             # Arquivos públicos e estáticos (imagens, fontes, etc.)
+├── src/                # Código-fonte principal do projeto
+│   ├── app/            # Diretório principal de páginas e rotas
+│   ├── components/     # Componentes reutilizáveis da aplicação
+│   ├── styles/         # Arquivos de estilo (Tailwind e outros)
+│   ├── hooks/          # Hooks personalizados
+│   ├── contexts/       # Provedores de contexto para estado global
+├── tailwind.config.ts  # Configuração do Tailwind CSS
+└── tsconfig.json       # Configuração do TypeScript
 ```
 
 ## Pré-requisitos
