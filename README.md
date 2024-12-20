@@ -98,4 +98,9 @@ docker exec -it my_postgres_container bash
 psql -h localhost -p 5432 -U myuser -d mydatabase
 ```
 
+### Passo 6: Rodar a aplicação
+
+```bash
+npm run dev
+```
 
