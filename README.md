@@ -1,5 +1,15 @@
 # Projeto Classificados
+Classificados é uma aplicação para anunciar carros usados, onde os usuários podem cadastrar carros, visualizar os detalhes e buscar anúncios com base em filtros de preço.
 
+## Tecnologias Utilizadas
+
+- **Next.js**: Framework React para renderização do lado do servidor (SSR) e geração de sites estáticos (SSG).
+- **React**: Biblioteca JavaScript para construir interfaces de usuário.
+- **Prisma**: ORM moderno para Node.js e TypeScript, utilizado para interagir com o banco de dados.
+- **Tailwind CSS**: Framework CSS utilitário para design rápido e responsivo.
+- **Zod**: Biblioteca de validação de esquemas para validar e parsear dados de maneira segura e eficiente.
+- **Sharp**: Biblioteca para manipulação de imagens, como redimensionamento e otimização.
+- **UUID**: Utilizado para gerar identificadores exclusivos universais (UUIDs).
 
 ## Estrutura do Projeto
 ```bash
