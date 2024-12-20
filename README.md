@@ -30,7 +30,9 @@ Classificados é uma aplicação para anunciar carros usados, onde os usuários 
 │   ├── components/     # Componentes reutilizáveis da aplicação
 │   ├── styles/         # Arquivos de estilo (Tailwind e outros)
 │   ├── hooks/          # Hooks personalizados
-│   ├── contexts/       # Provedores de contexto para estado global
+│   ├── utils/          # Funções utilitárias reutilizáveis em várias partes da aplicação
+│   ├── services/       # Lógica de negócios e interações com APIs ou fontes externas de dados
+│   └── contexts/       # Provedores de contexto para estado global
 ├── tailwind.config.ts  # Configuração do Tailwind CSS
 └── tsconfig.json       # Configuração do TypeScript
 ```
