@@ -1,8 +1,9 @@
+import { createCar } from "@/actions/createCar"
 import { Button } from "./Button"
 
 export const AddForm = () => {
     return (
-        <form action="">
+        <form action={createCar}>
             <label className='block border border-gray-500 p-4 mb-3'>
                 <input type='file' name='img' className="bg-transparent text-white text-lg w-full outline-none"/>
             </label>
@@ -28,8 +29,8 @@ export const AddForm = () => {
             <label className='block border border-gray-500 p-4 mb-3'>
                 <textarea name="description" rows={4} className="resize-none bg-transparent text-white text-lg w-full outline-none"></textarea>
             </label>
-            
+
             <Button label='Cadastrar'/>
         </form>
     )
-}  
+}

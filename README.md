@@ -2,7 +2,16 @@
 
 
 ## Estrutura do Projeto
-src
+```bash
+/classificados
+│
+├── /src/
+│   ├──
+│   └──1
+│
+├── /node_modules/
+└── tsconfig.json
+```
 
 ## Pré-requisitos
 
@@ -21,7 +30,7 @@ sudo docker --version
 ```bash
 git clone https://github.com/lopesmauro/classificados.git
 cd classificados
-npm i 
+npm i
 ```
 
 ### Passo 2: Definir Variáveis de Ambiente
