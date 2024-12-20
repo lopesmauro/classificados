@@ -3,7 +3,7 @@ import { Button } from "./Button"
 
 export const AddForm = () => {
     return (
-        <form action={createCar}>
+        <form action={createCar} >
             <label className='block border border-gray-500 p-4 mb-3'>
                 <input type='file' name='img' className="bg-transparent text-white text-lg w-full outline-none"/>
             </label>
