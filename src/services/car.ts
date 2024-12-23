@@ -1,10 +1,27 @@
-export const addCar = async () => {
-  import { PrismaClient } from '@prisma/client'
+import { prisma } from "@/utils/prisma"
+type Params = {
+  imgName: string,
+  title: string,
+  description: string,
+  priceFrom: string,
+  priceTo: string,
+  negotiable?: boolean,
+  authorName: string,
+  authorEmail: string,
+}
 
-  const globalForPrisma = globalThis as unknown as { prisma: PrismaClient }
-
-  export const prisma =
-  globalForPrisma.prisma || new PrismaClient()
-
-  if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+export const addCar = async (data: Params) => {
+  const newCar = await prisma.car.create({
+    data: {
+      img: data.imgName,
+      title: data.title,
+      description: data.description,
+      priceFrom: parseFloat(data.priceFrom),
+      priceTo: parseFloat(data.priceTo),
+      negotiable: data.negotiable,
+      authorName: data.priceFrom,
+      authorEmail: data.priceFrom
+    }
+  })
+  return newCar
 }
