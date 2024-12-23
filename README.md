@@ -1,4 +1,4 @@
-# Projeto Classificados
+# 🚗 Projeto Classificados
 Classificados é uma aplicação para anunciar carros usados, onde os usuários podem cadastrar carros, visualizar os detalhes e buscar anúncios com base em filtros de preço.
 
 ## Tecnologias Utilizadas
