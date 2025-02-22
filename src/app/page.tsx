@@ -7,7 +7,7 @@ export default async function Home() {
   return (
     <div>
       <Header />
-      <section className="grid sm:grid-cols-2 nmd:grid-cols-3"> 
+      <section className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
       {cars.map((car) => (
        <Link href={(car.id.toString())} key={car.id}>
         <div>
@@ -15,7 +15,7 @@ export default async function Home() {
           <h2>{car.title}</h2>
           <p>{car.priceFrom} - {car.priceTo} USD</p>
         </div>
-       </Link> 
+       </Link>
       ))
       }
       </section>

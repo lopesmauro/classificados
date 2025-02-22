@@ -11,6 +11,48 @@ Classificados é uma aplicação para anunciar carros usados, onde os usuários 
 - **Sharp**: Biblioteca para manipulação de imagens, como redimensionamento e otimização.
 - **UUID**: Utilizado para gerar identificadores exclusivos universais (UUIDs).
 
+## RFs (Requisitos funcionais)
+
+- [ ] O usuário deve poder criar uma conta com nome, e-mail, senha e telefone de contato.
+- [ ] O usuário deve poder fazer login e permanecer autenticado na plataforma.
+- [ ] O usuário pode cadastrar anúncios de carros, incluindo fotos, descrição, ano, quilometragem e preço.
+- [ ] O usuário pode editar detalhes do seu anúncio a qualquer momento.
+- [ ] O usuário pode desativar temporariamente um anúncio sem precisar excluí-lo.
+- [ ] O usuário pode excluir um anúncio permanentemente.
+- [ ] O usuário pode visualizar a lista de carros anunciados por outros usuários.
+- [ ] O usuário pode acessar uma página detalhada de um carro específico.
+- [ ] O usuário pode buscar carros por filtros como preço, marca, modelo, ano, cidade e quilometragem.
+- [ ] O usuário pode favoritar anúncios para acessar mais tarde.
+- [ ] O usuário pode entrar em contato com o vendedor via chat integrado ou WhatsApp.
+- [ ] O usuário pode avaliar vendedores após uma negociação concluída.
+- [ ] O usuário pode visualizar a reputação de um vendedor antes de entrar em contato.
+- [ ] O usuário pode marcar um carro como "vendido", removendo-o das buscas, mas mantendo o histórico de vendas.
+- [ ] O sistema pode recomendar anúncios baseados no histórico de buscas e interesses do usuário.
+
+## RNs (Regras de negocio)
+
+- [ ] O e-mail do usuário deve ser único e verificado antes do primeiro login.
+- [ ] O telefone de contato deve ser válido para permitir negociações via WhatsApp.
+- [ ] Apenas o dono do anúncio pode editá-lo, desativá-lo ou excluí-lo.
+- [ ] Anúncios não podem ter um preço abaixo de R$ 1.000,00 (para evitar fraudes).
+- [ ] Um usuário não pode favoritar o próprio anúncio.
+- [ ] O chat integrado entre vendedor e comprador deve ser salvo para referência futura.
+- [ ] Um anúncio inativo por mais de 90 dias deve ser arquivado automaticamente.
+- [ ] Um vendedor com muitas avaliações negativas pode ter seus anúncios suspensos.
+- [ ] Apenas usuários autenticados podem visualizar os contatos dos vendedores.
+
+## RNFs (Requisitos nao funcionais)
+
+- [ ] As senhas dos usuários devem ser armazenadas de forma segura com hashing e salting.
+- [ ] O sistema deve utilizar PostgreSQL como banco de dados principal.
+- [ ] O armazenamento de imagens deve ser otimizado com a biblioteca Sharp.
+- [ ] O sistema deve suportar paginação de anúncios, carregando 20 itens por vez.
+- [ ] Deve utilizar JWT (JSON Web Token) para autenticação segura.
+- [ ] O front-end deve ser responsivo e adaptável para dispositivos móveis.
+- [ ] O histórico de buscas do usuário deve ser armazenado para melhorar sugestões futuras.
+- [ ] O sistema deve registrar logs de acesso e atividades suspeitas para segurança.
+
+
 ## Estrutura do Projeto
 ```bash
 /classificados
