@@ -19,8 +19,8 @@ export const addCar = async (data: Params) => {
       priceFrom: parseFloat(data.priceFrom),
       priceTo: parseFloat(data.priceTo),
       negotiable: data.negotiable,
-      authorName: data.priceFrom,
-      authorEmail: data.priceFrom
+      authorName: data.authorName,
+      authorEmail: data.authorEmail
     }
   })
   return newCar
@@ -37,4 +37,13 @@ export const getAllCars = async () => {
     }
   })
   return cars
+}
+
+export const getCarById = async (id: number) => {
+  const car = await prisma.car.findUnique({
+    where: {
+      id
+    }
+  })
+  return car
 }

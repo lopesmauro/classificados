@@ -4,7 +4,9 @@ import { Button } from "./Button"
 export const Header = () => {
     return(
         <header className="flex justify-between items-center py-10">
-            <div className="text-3xl font-bold ">MF aCarros</div>
+            <Link href={'/'}>
+              <div className="text-3xl font-bold ">MF Carros</div>
+            </Link>
             <div>
                 <Link href={'/add'}>
                     <Button label="Cadastrar"/>

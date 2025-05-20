@@ -11,9 +11,9 @@ export const createCar = async (formData: FormData) => {
     price_to: formData.get('price_to'),
     price_from: formData.get('price_from'),
     negotiable: formData.get('negotiable'),
-    author_name: formData.get('author_name'),
-    author_email: formData.get('author_email'),
-    description: formData.get('description'),
+    author_name: formData.get('author_name')?.toString(),
+    author_email: formData.get('author_email')?.toString(),
+    description: formData.get('description')?.toString(),
   })
 
   if(data.success) {
