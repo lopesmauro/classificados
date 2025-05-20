@@ -152,7 +152,14 @@ docker exec -it my_postgres_container bash
 psql -h localhost -p 5432 -U myuser -d mydatabase
 ```
 
-### Passo 6: Rodar a aplicação
+### Passo 6: Executar/Sincronizar as migrações no Prisma
+
+```bash
+npx prisma migrate dev
+npx prisma generate
+```
+
+### Passo 7: Rodar a aplicação
 
 ```bash
 npm run dev
